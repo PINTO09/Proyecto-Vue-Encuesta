@@ -1,0 +1,429 @@
+/* Variables globales */
+:root {
+    --primary-color: #28a745;
+    --secondary-color: #6c757d;
+    --success-color: #2a28a7;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333333 !important; /* Color de texto más oscuro y visible */
+}
+
+/* Mejoras de visibilidad para todo el texto */
+* {
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50 !important;
+    font-weight: 600 !important;
+}
+
+p, span, div, label, input, textarea, select {
+    color: #333333 !important;
+}
+
+/* Estilos para la página de login */
+.card {
+    border: none;
+    border-radius: 15px;
+    background-color: #ffffff !important;
+}
+
+.card-body {
+    padding: 2rem;
+    color: #333333 !important;
+}
+
+.card-title {
+    color: #2c3e50 !important;
+    font-weight: 600 !important;
+}
+
+.card-text {
+    color: #333333 !important;
+}
+
+.input-group-text {
+    background-color: transparent;
+    border-right: none;
+    color: #333333 !important;
+}
+
+.form-control {
+    border-left: none;
+    color: #333333 !important;
+    background-color: #ffffff !important;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #ffffff;
+    color: #333333 !important;
+}
+
+.form-label {
+    color: #2c3e50 !important;
+    font-weight: 500 !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover {
+    background-color: #063da3;
+    transform: translateY(-1px);
+    color: #ffffff !important;
+}
+
+/* Estilos para el dashboard */
+.dashboard-card {
+    transition: transform 0.3s ease;
+    background-color: #ffffff !important;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilos para las encuestas */
+.survey-card {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-color: #ffffff !important;
+}
+
+.survey-card .card-header {
+    background-color: var(--light-color);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    color: #2c3e50 !important;
+}
+
+/* Estilos para las estadísticas */
+.stats-card {
+    background: linear-gradient(45deg, var(--primary-color), #c54949);
+    color: #ffffff !important;
+}
+
+.stats-card .card-title {
+    color: #ffffff !important;
+}
+
+.stats-card .card-text {
+    color: #ffffff !important;
+}
+
+/* Estilos para los formularios de encuesta */
+.question-container {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    color: #333333 !important;
+}
+
+/* Estilos para las tablas */
+.table-custom {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-custom thead th {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.table {
+    color: #333333 !important;
+}
+
+.table th {
+    color: #2c3e50 !important;
+    font-weight: 600 !important;
+}
+
+.table td {
+    color: #333333 !important;
+}
+
+/* Estilos para los botones de acción */
+.action-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 0 0.25rem;
+    color: #ffffff !important;
+}
+
+/* Estilos para los mensajes de alerta */
+.alert-custom {
+    border-radius: 10px;
+    border: none;
+    padding: 1rem;
+    color: #333333 !important;
+}
+
+/* Estilos para los modales */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    background-color: #ffffff !important;
+    color: #333333 !important;
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-title {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.modal-body {
+    color: #333333 !important;
+}
+
+.modal-body label {
+    color: #2c3e50 !important;
+    font-weight: 500 !important;
+}
+
+.modal-body input,
+.modal-body textarea,
+.modal-body select {
+    color: #333333 !important;
+    background-color: #ffffff !important;
+}
+
+/* Mejoras para el backdrop del modal */
+.modal-backdrop {
+    opacity: 0.5 !important;
+}
+
+/* Estilos para la navegación */
+.navbar {
+    background-color: var(--primary-color) !important;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.nav-link {
+    color: #ffffff !important;
+}
+
+.nav-link.active {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    .dashboard-card {
+        margin-bottom: 1rem;
+    }
+} 
+
+/* Intenta cambiar el color de fondo de los botones primarios */
+.MuiButton-containedPrimary {
+  background-color: #4caf50 !important;
+}
+
+/* Intenta cambiar el color de fondo de la barra de aplicación superior */
+.MuiAppBar-colorPrimary {
+  background-color: #4caf50 !important;
+}
+
+/* Reglas para elementos de lista seleccionados en el menú (Drawer) */
+.MuiListItem-button.Mui-selected {
+  background-color: #4caf50 !important;
+  color: #fff !important; /* Color del texto */
+}
+
+/* Intenta cambiar el color del icono en el elemento de lista seleccionado */
+.MuiListItem-button.Mui-selected .MuiListItemIcon-root {
+  color: #fff !important;
+}
+
+/* Intenta cambiar el color del texto principal en el elemento de lista seleccionado */
+.MuiListItem-button.Mui-selected .MuiListItemText-primary {
+  color: #fff !important;
+}
+
+/* Color de fondo del área de contenido principal (esto ya estaba del ejemplo anterior) */
+.main-content-area {
+  background-color: #b91d1d !important;
+}
+
+/* fondo de la barra principal dpnde estas las */
+.navbar.bg-primary {
+  background-color: #0a3d11 !important;
+}
+
+/* Mejoras adicionales para visibilidad */
+.text-muted {
+    color: #6c757d !important;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+.text-dark {
+    color: #333333 !important;
+}
+
+/* Asegurar que los elementos de formulario sean visibles */
+input::placeholder,
+textarea::placeholder {
+    color: #6c757d !important;
+    opacity: 1 !important;
+}
+
+/* Mejorar contraste para elementos interactivos */
+.btn {
+    font-weight: 500 !important;
+}
+
+.btn-outline-light {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+.btn-outline-light:hover {
+    color: var(--primary-color) !important;
+    background-color: #ffffff !important;
+}
+
+/* Mejoras específicas para modales */
+.modal {
+    z-index: 1050 !important;
+}
+
+.modal-backdrop {
+    z-index: 1040 !important;
+    opacity: 0.5 !important;
+}
+
+.modal-dialog {
+    z-index: 1055 !important;
+}
+
+.modal-content {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5) !important;
+}
+
+/* Asegurar que todos los textos en el modal sean visibles */
+.modal * {
+    color: inherit !important;
+}
+
+.modal-body h4 {
+    color: #2c3e50 !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Mejorar visibilidad de elementos específicos */
+.container h1 {
+    color: #2c3e50 !important;
+    font-weight: 700 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Asegurar que las tablas tengan buen contraste */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,0.02) !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0,0,0,0.05) !important;
+}
+
+/* Mejorar visibilidad de elementos de navegación */
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+    opacity: 0.8 !important;
+}
+
+/* Asegurar que los iconos sean visibles */
+.fas, .fa {
+    color: inherit !important;
+}
+
+/* Mejorar visibilidad de elementos de formulario */
+.form-select {
+    color: #333333 !important;
+    background-color: #ffffff !important;
+}
+
+.form-select:focus {
+    color: #333333 !important;
+    background-color: #ffffff !important;
+}
+
+/* Asegurar que los elementos de lista sean visibles */
+.list-group-item {
+    color: #333333 !important;
+    background-color: #ffffff !important;
+}
+
+/* Mejorar visibilidad de alertas y mensajes */
+.alert {
+    color: #333333 !important;
+    font-weight: 500 !important;
+}
+
+.alert-success {
+    background-color: #d4edda !important;
+    border-color: #c3e6cb !important;
+    color: #155724 !important;
+}
+
+.alert-danger {
+    background-color: #f8d7da !important;
+    border-color: #f5c6cb !important;
+    color: #721c24 !important;
+}
+
+.alert-warning {
+    background-color: #fff3cd !important;
+    border-color: #ffeaa7 !important;
+    color: #856404 !important;
+}
+
+.alert-info {
+    background-color: #d1ecf1 !important;
+    border-color: #bee5eb !important;
+    color: #0c5460 !important;
+}

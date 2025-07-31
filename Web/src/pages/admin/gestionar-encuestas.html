@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Encuestas - Sistema de Encuestas ULEAM</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../../../assets/new-logo-uleam.png" alt="Logo ULEAM" height="80">
+                Sistema de Encuestas
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gestionar-encuestas.html">Gestionar Encuestas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resultados.html">Resultados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usuarios.html">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="estadisticas.html">Estadísticas</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <span class="text-white me-3" id="userName"></span>
+                    <button class="btn btn-outline-light" onclick="auth.logout()">
+                        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container mt-4">
+        <h1>Gestionar Encuestas</h1>
+
+        <div class="d-flex justify-content-end mb-3">
+            <button class="btn btn-primary" id="createSurveyBtn">
+                <i class="fas fa-plus-circle"></i> Crear Nueva Encuesta
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Lista de Encuestas</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Estado</th>
+                                <th>Fecha de Creación</th>
+                                <th>Fecha Límite</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="surveysTableBody">
+                            <!-- Aquí se cargarán las encuestas -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Crear/Editar Encuesta -->
+    <div class="modal fade" id="surveyModal" tabindex="-1" aria-labelledby="surveyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="surveyModalLabel">Crear Nueva Encuesta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="surveyForm">
+                        <input type="hidden" id="surveyId">
+                        <div class="mb-3">
+                            <label for="surveyTitle" class="form-label">Título de la Encuesta</label>
+                            <input type="text" class="form-control" id="surveyTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="surveyDescription" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="surveyDescription" rows="3"></textarea>
+                        </div>
+                        
+                        <!-- Sección para Preguntas -->
+                        <h4>Preguntas</h4>
+                        <div id="questionsContainer">
+                            <!-- Aquí se agregarán las preguntas dinámicamente -->
+                        </div>
+                        <button type="button" class="btn btn-secondary btn-sm mt-2" id="addQuestionBtn"><i class="fas fa-plus"></i> Agregar Pregunta</button>
+
+                        <hr>
+
+                        <div class="mb-3">
+                            <label for="surveyDueDate" class="form-label">Fecha Límite</label>
+                            <input type="date" class="form-control" id="surveyDueDate">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mt-3">Guardar Encuesta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/admin/gestionar-encuestas.js"></script>
+</body>
+</html> 
